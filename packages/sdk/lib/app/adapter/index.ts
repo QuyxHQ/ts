@@ -24,6 +24,15 @@ export default class QuyxAPIClass {
     }
 
     /**
+     * Generates a payload to use for ton connect
+     * @returns {string} returns the payload
+     **/
+    async generatePayload(): Promise<string | undefined> {
+        const { data } = await this.client.getInstanceWithoutAuth().get('/auth/token')
+        return (data.data.token as string) || undefined
+    }
+
+    /**
      * Signs the user in to Quyx service
      * @param  {Object} walletInfo - returned after passing connecting the users wallet
      * @returns {SignInResponse} returns the user access & refresh token
