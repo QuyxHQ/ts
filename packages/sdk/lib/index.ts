@@ -1,5 +1,6 @@
 import QuyxAPIClass from './app/adapter'
 import ApiClient from './app/adapter/api.client'
+import constants from './app/constants'
 
 export class Quyx extends QuyxAPIClass {
     constructor(sk: string) {
@@ -12,3 +13,5 @@ export class QuyxForUI extends QuyxAPIClass {
         super(new ApiClient({ tokens, keys: { pk } }))
     }
 }
+
+export const storage = constants.STORAGE

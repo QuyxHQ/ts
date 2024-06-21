@@ -1,7 +1,7 @@
 {
     "name": "@quyx/ui-react",
     "version": "0.0.1",
-    "private": false,
+    "private": true,
     "description": "React library for Quyx's integration",
     "author": "Adedeji Morifeoluwa <141498118+iamthe-nerdyDev@users.noreply.github.com>",
     "homepage": "https://github.com/QuyxHQ/ts#readme",

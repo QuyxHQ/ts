@@ -297,4 +297,40 @@ export default class QuyxAPIClass {
         const response = await this.client.getInstance().get(`/user/${did}`)
         return response.data.data
     }
+
+    /**
+     * Uploads an image
+     * @param  {string} base64image
+     * @returns {string|null} the image url
+     **/
+    async uploadImage(base64image: string): Promise<string | null> {
+        const { error, data } = await this.client
+            .getInstance()
+            .post('/misc/upload', { image: base64image.split(',')[1] })
+
+        if (error) return null
+        return (data?.data.uri as string) ?? null
+    }
+
+    /**
+     * Deletes session of the current user
+     * @returns {boolean}
+     **/
+    async logout(): Promise<boolean> {
+        const { error, data } = await this.client.getInstance().delete('/session/current')
+
+        if (error) return false
+
+        const { acknowledged, modifiedCount } = data.data.data
+        if (!acknowledged || modifiedCount == 0) return false
+
+        if (this.storage) {
+            await Promise.all([
+                this.storage.removeItem('access_token'),
+                this.storage.removeItem('refresh_token'),
+            ])
+        }
+
+        return true
+    }
 }
