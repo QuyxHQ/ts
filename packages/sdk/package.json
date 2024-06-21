@@ -1,5 +1,5 @@
 {
-    "name": "sdk",
+    "name": "@quyx/sdk",
     "version": "0.0.0",
     "private": false,
     "description": "API wrapper for Quyx's integration",
