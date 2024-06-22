@@ -4,6 +4,7 @@ import { AsyncLocalStorage } from '../async.storage'
 import constants from '../constants'
 import QuyxError from '../error'
 import {
+    Credential,
     DID,
     IssueVCProps,
     IssueVCResponse,
@@ -266,9 +267,7 @@ export default class QuyxAPIClass {
 
         const response = await this.client
             .getInstance()
-            .get(
-                `/identity/user?page=${props.page}&limit=${props.limit}&revalidate=${props.revalidate}`
-            )
+            .get(`/identity?page=${props.page}&limit=${props.limit}&revalidate=${props.revalidate}`)
 
         if (response.error) {
             if (response.code === 401) {
