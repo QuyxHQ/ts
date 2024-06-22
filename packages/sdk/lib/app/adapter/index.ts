@@ -303,7 +303,7 @@ export default class QuyxAPIClass {
      * @returns {any}
      **/
     async getCredential(did: DID): Promise<any> {
-        const response = await this.client.getInstance().get(`/user/${did}`)
+        const response = await this.client.getInstance().get(`/identity/user/${did}`)
         return response.data.data
     }
 
