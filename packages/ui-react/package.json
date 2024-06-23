@@ -47,8 +47,12 @@
         "url": "https://github.com/QuyxHQ/ts/issues"
     },
     "devDependencies": {
+        "@babel/core": "^7.24.7",
+        "@babel/preset-env": "^7.24.7",
+        "@babel/preset-react": "^7.24.7",
+        "@babel/preset-typescript": "^7.24.7",
+        "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-commonjs": "^25.0.3",
-        "@rollup/plugin-json": "^6.1.0",
         "@rollup/plugin-node-resolve": "^15.1.0",
         "@rollup/plugin-terser": "^0.4.3",
         "@rollup/plugin-typescript": "^11.1.2",
@@ -63,6 +67,7 @@
         "react": "^18.0.0",
         "rollup": "^3.26.3",
         "rollup-plugin-dts": "^5.3.0",
+        "rollup-plugin-node-polyfills": "^0.2.1",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-postcss": "^4.0.2",
         "ts-node": "^10.9.2",

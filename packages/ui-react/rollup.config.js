@@ -5,7 +5,8 @@ import dts from 'rollup-plugin-dts'
 import terser from '@rollup/plugin-terser'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
-import json from '@rollup/plugin-json'
+import babel from '@rollup/plugin-babel'
+import nodePolyfills from 'rollup-plugin-node-polyfills'
 
 const packageJson = require('./package.json')
 
@@ -30,10 +31,18 @@ export default [
                 inject: { insertAt: 'top' },
             }),
             typescript(),
-            json(),
             peerDepsExternal(),
-            resolve(),
+            resolve({
+                preferBuiltins: true,
+                browser: true,
+            }),
             commonjs(),
+            babel({
+                babelHelpers: 'bundled',
+                exclude: 'node_modules/**',
+                presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            }),
+            nodePolyfills(),
             terser(),
         ],
     },
