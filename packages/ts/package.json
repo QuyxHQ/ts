@@ -1,8 +1,8 @@
 {
-    "name": "@quyx/sdk",
-    "version": "1.0.0",
+    "name": "@quyx/ts",
+    "version": "1.0.2",
     "private": false,
-    "description": "API wrapper for Quyx's integration",
+    "description": "Offical typescript library for nodejs applications",
     "author": "Adedeji Morifeoluwa <141498118+iamthe-nerdyDev@users.noreply.github.com>",
     "homepage": "https://github.com/QuyxHQ/ts#readme",
     "license": "Apache-2.0",
@@ -40,20 +40,18 @@
         "url": "git+https://github.com/QuyxHQ/ts.git"
     },
     "scripts": {
-        "build": "tsc",
-        "test": "ts-node ./__tests__/sdk.test.ts",
-        "clean": "rm -rf dist/"
+        "test": "ts-node ./__tests__/ts.test.ts",
+        "clean": "rm -rf dist/",
+        "build": "tsc"
     },
     "bugs": {
         "url": "https://github.com/QuyxHQ/ts/issues"
     },
     "devDependencies": {
-        "@types/lodash": "^4.17.5",
         "ts-node": "^10.9.2",
         "typescript": "^5.5.2"
     },
     "dependencies": {
-        "axios": "^1.7.2",
-        "lodash": "^4.17.21"
+        "@quyx/sdk": "*"
     }
 }

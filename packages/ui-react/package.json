@@ -9,6 +9,7 @@
     "types": "./dist/index.d.ts",
     "main": "./dist/cjs/index.js",
     "publishConfig": {
+        "registry": "https://npm.pkg.github.com",
         "access": "public"
     },
     "exports": {

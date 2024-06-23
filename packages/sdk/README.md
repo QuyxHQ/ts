@@ -1,11 +1,21 @@
-# `sdk`
+<p align="center">
+<br />
+<img src="https://github.com/QuyxHQ/ts/blob/main/assets/logo.svg?raw=true" width="200" alt="Quyx"/>
+<br />
+</p>
 
-> TODO: description
+<h1 align="center">Quyx TypeScript: sdk</h1>
 
-## Usage
+## Installation
 
+Install the latest version with `npm`:
+
+```sh
+npm install @quyx/sdk
 ```
-const sdk = require('sdk');
 
-// TODO: DEMONSTRATE API
+or with `yarn`:
+
+```sh
+yarn add @quyx/sdk
 ```
