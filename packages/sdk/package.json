@@ -1,6 +1,6 @@
 {
     "name": "@quyx/sdk",
-    "version": "0.0.6",
+    "version": "1.0.0",
     "private": false,
     "description": "API wrapper for Quyx's integration",
     "author": "Adedeji Morifeoluwa <141498118+iamthe-nerdyDev@users.noreply.github.com>",
