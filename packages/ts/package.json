@@ -1,6 +1,6 @@
 {
     "name": "@quyx/ts",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "private": false,
     "description": "Offical typescript library for nodejs applications",
     "author": "Adedeji Morifeoluwa <141498118+iamthe-nerdyDev@users.noreply.github.com>",
@@ -51,7 +51,7 @@
         "typescript": "^5.5.2"
     },
     "dependencies": {
-        "@quyx/sdk": "^1.1.0"
+        "@quyx/sdk": "^1.2.0"
     },
     "gitHead": "0ce7858672ff77bb883f1b0360305cf2f6a1d1e5"
 }
