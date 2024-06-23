@@ -75,10 +75,7 @@ const QuyxProvider: React.FC<QuyxProviderProps> = (props) => {
             if (isMounting || !isConnectionRestored || isAuthenticating) return
 
             if (state.user && !wallet) {
-                await Promise.all([
-                    storage.removeItem('access_token'),
-                    storage.removeItem('refresh_token'),
-                ])
+                await Promise.all([storage.removeItem('access_token'), storage.removeItem('refresh_token')])
 
                 logout()
             }
@@ -178,7 +175,7 @@ const QuyxProvider: React.FC<QuyxProviderProps> = (props) => {
                 isAuthenticating,
                 displayImportModal,
                 credentialFormat: props.credentialFormat,
-                credentialsCanExpire: props.credentialsCanExpire || true,
+                credentialsCanExpire: props.credentialsCanExpire ?? true,
                 usernames,
                 openImportModal,
                 closeImportModal,
@@ -188,7 +185,7 @@ const QuyxProvider: React.FC<QuyxProviderProps> = (props) => {
                 setIsAuthenticating,
             }}
         >
-            {props.children}
+            <main className="quyx-root">{props.children}</main>
         </QuyxProviderContext.Provider>
     )
 }

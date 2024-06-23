@@ -15,22 +15,18 @@ const ConnectBtn: React.FC<ConnectBtnProps> = (props) => {
     const { isMounting, user, credential, isAuthenticating } = useInApp()
     const isConnectionRestored = useIsConnectionRestored()
 
-    return (
-        <main className="quyx-root">
-            {isMounting || !isConnectionRestored || isAuthenticating ? (
-                <button className="btn" disabled>
-                    <div className="w-100 d-flex align-items-center justify-content-center">
-                        <Loader size={18} />
-                    </div>
-                </button>
-            ) : !user ? (
-                <Connect children={props.connectBtn} className={props.className} />
-            ) : !credential ? (
-                <ImportCredential children={props.importBtn} className={props.className} />
-            ) : (
-                <Connected children={props.connectedBtn} className={props.className} />
-            )}
-        </main>
+    return isMounting || !isConnectionRestored || isAuthenticating ? (
+        <button className="btn" disabled>
+            <div className="w-100 d-flex align-items-center justify-content-center">
+                <Loader size={18} />
+            </div>
+        </button>
+    ) : !user ? (
+        <Connect children={props.connectBtn} className={props.className} />
+    ) : !credential ? (
+        <ImportCredential children={props.importBtn} className={props.className} />
+    ) : (
+        <Connected children={props.connectedBtn} className={props.className} />
     )
 }
 

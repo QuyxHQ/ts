@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { omit } from 'lodash'
 import JsonView from 'react18-json-view'
 import { sha256 } from 'ton-crypto'
+import { QuyxForUI, storage } from '@quyx/sdk'
 import 'react18-json-view/src/style.css'
 import { Credential } from '../../../types'
 import { Cancel, CredentialIcon, Import, Loader, MoodPuzzled, Plus } from '../../../icons'
 import useInApp from '../../../hooks/useInApp'
-import { QuyxForUI, storage } from '@quyx/sdk'
 import { validateCredentialStructure } from '../../../utils/helpers'
 import CreateCredentialContent from './CreateCredentialContent'
 
@@ -25,8 +25,7 @@ const CredentialsContent: React.FC<Props> = ({
     credentials,
     setPage,
 }) => {
-    const { closeImportModal, pk, setCredential, user, credentialFormat, credentialsCanExpire } =
-        useInApp()
+    const { closeImportModal, pk, setCredential, user, credentialFormat, credentialsCanExpire } = useInApp()
     const [selectedIndex, setSelectedIndex] = useState<number>()
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [errors, setErrors] = useState<string[]>([])
@@ -96,7 +95,7 @@ const CredentialsContent: React.FC<Props> = ({
                             <MoodPuzzled size={60} />
                             <p>You don't have any credential at the moment</p>
 
-                            <button className="btn">
+                            <button className="btn" onClick={() => setDisplayAddCreedSCreen(true)}>
                                 <Plus size={21} />
                                 <div>Create one</div>
                             </button>
@@ -123,12 +122,10 @@ const CredentialsContent: React.FC<Props> = ({
                                     </option>
                                 ))}
                             </select>
+
                             <div className="helper">
                                 <div>
-                                    <button
-                                        onClick={() => setPage(page + 1)}
-                                        disabled={!hasNextPage}
-                                    >
+                                    <button onClick={() => setPage(page + 1)} disabled={!hasNextPage}>
                                         load more
                                     </button>
 
@@ -150,8 +147,7 @@ const CredentialsContent: React.FC<Props> = ({
                                     {typeof selectedIndex !== 'undefined' ? (
                                         <JsonView
                                             src={omit(
-                                                credentials[selectedIndex].credential
-                                                    .credentialSubject,
+                                                credentials[selectedIndex].credential.credentialSubject,
                                                 ['id', 'address']
                                             )}
                                             enableClipboard={false}
@@ -169,9 +165,7 @@ const CredentialsContent: React.FC<Props> = ({
                                 <div className="errors">
                                     <p>
                                         {errors[0]}&nbsp;
-                                        {errors.length - 1 > 0
-                                            ? `& +${errors.length - 1} more`
-                                            : null}
+                                        {errors.length - 1 > 0 ? ` +${errors.length - 1} more` : null}
                                     </p>
                                 </div>
                             ) : null}
