@@ -1,6 +1,6 @@
 {
     "name": "@quyx/ui-react",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "private": false,
     "description": "React library for Quyx's integration",
     "author": "Adedeji Morifeoluwa <141498118+iamthe-nerdyDev@users.noreply.github.com>",
@@ -76,7 +76,7 @@
         "typescript": "^5.5.2"
     },
     "dependencies": {
-        "@quyx/sdk": "^1.0.0",
+        "@quyx/sdk": "^1.1.0",
         "axios": "^1.7.2",
         "date-fns": "^3.6.0",
         "lodash": "^4.17.21",
