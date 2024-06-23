@@ -9,7 +9,6 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com",
         "access": "public"
     },
     "exports": {
@@ -55,5 +54,6 @@
     "dependencies": {
         "axios": "^1.7.2",
         "lodash": "^4.17.21"
-    }
+    },
+    "gitHead": "0ce7858672ff77bb883f1b0360305cf2f6a1d1e5"
 }

@@ -9,7 +9,6 @@
     "types": "./dist/index.d.ts",
     "main": "./dist/cjs/index.js",
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com",
         "access": "public"
     },
     "exports": {
@@ -87,5 +86,6 @@
     "peerDependencies": {
         "@tonconnect/ui-react": "^2.0.5",
         "react": "^18.0.0"
-    }
+    },
+    "gitHead": "0ce7858672ff77bb883f1b0360305cf2f6a1d1e5"
 }
