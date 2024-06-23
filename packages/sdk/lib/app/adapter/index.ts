@@ -298,11 +298,11 @@ export default class QuyxAPIClass {
 
     /**
      * Gives space access to user credential
-     * @param  {DID} did
+     * @param  {string} param - user did or address
      * @returns {any}
      **/
-    async getCredential(did: DID): Promise<any> {
-        const response = await this.client.getInstance().get(`/identity/user/${did}`)
+    async getCredential(param: string): Promise<any> {
+        const response = await this.client.getInstance().get(`/identity/user/${param}`)
         return response.data.data
     }
 

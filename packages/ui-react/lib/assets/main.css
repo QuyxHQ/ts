@@ -1,0 +1,756 @@
+.quyx-root * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, Tahoma,
+        Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.quyx-root button {
+    outline: none;
+    appearance: auto;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    cursor: pointer;
+}
+
+.quyx-root button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+
+.quyx-root button.btn {
+    display: inline-block;
+    min-width: 100px;
+    gap: unset;
+    align-items: unset;
+    justify-content: unset;
+    background-color: rgba(229, 229, 234, 0.12);
+    color: #e5e5ea;
+    padding: 9px 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: none;
+    border-radius: 100vh;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 590;
+    line-height: 18px;
+    transition: transform 0.125s ease-in-out;
+    background-color: #0098ea;
+    color: #ffffff;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+}
+
+.quyx-root button.btn:hover {
+    transform: scale(1.015);
+}
+
+.quyx-root button.btn.connected:hover {
+    transform: unset;
+}
+
+.quyx-root button.btn > div {
+    font-style: normal;
+    font-weight: 590;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+}
+
+.quyx-root .dropdown-container {
+    position: relative;
+    width: max-content;
+}
+
+.quyx-root .dropdown-container .dropdown {
+    position: absolute;
+    background-color: #0d0f18;
+    right: 0;
+    top: 2.9rem;
+    border-radius: 13px;
+    width: 15rem;
+    z-index: 9999;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+    border: 1px solid #1e2337;
+}
+
+.quyx-root .dropdown-container .dropdown.light {
+    background-color: #f7f9fb;
+    color: #000;
+    border: 1px solid #ddddddcd;
+}
+
+.quyx-root .dropdown-container .dropdown ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    padding: 0.55rem 0.5rem;
+}
+
+.quyx-root .dropdown-container .dropdown ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+}
+
+.quyx-root .dropdown-container .dropdown ul li:hover {
+    background-color: #1e2337;
+}
+
+.quyx-root .dropdown-container .dropdown.light ul li:hover {
+    background-color: #dddddd8b;
+}
+
+.quyx-root .dropdown-container .dropdown ul li svg {
+    opacity: 0.7;
+}
+
+.quyx-root svg {
+    display: block;
+}
+
+.quyx-root .w-100 {
+    width: 100%;
+}
+
+.quyx-root .d-flex {
+    display: flex;
+}
+
+.quyx-root .align-items-center {
+    align-items: center;
+}
+
+.quyx-root .justify-content-center {
+    justify-content: center;
+}
+
+.quyx-root .rotate-caret {
+    transform: rotate(270deg);
+    transition: transform 0.1s ease-in-out;
+}
+
+.scroll-disabled {
+    overflow: hidden;
+}
+
+.quyx-root .modal {
+    position: fixed;
+    width: 100%;
+    margin: 0% auto;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999999;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.quyx-root .modal .modal-box {
+    background-color: #fff;
+    width: 100%;
+    height: max-content;
+    position: fixed;
+    bottom: 0;
+    padding: 1.5rem 0;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    animation-name: fromBottom;
+    animation-duration: 0.5s;
+    -webkit-animation-name: fromBottom;
+    -webkit-animation-duration: 0.5s;
+    padding-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.quyx-root .modal .modal-box.dark {
+    background-color: #0d0f18;
+    color: #fff;
+    border: 1px solid #30364b;
+}
+
+@media screen and (min-width: 500px) {
+    .quyx-root .modal .modal-box {
+        position: relative;
+        margin: 3rem auto;
+        max-width: 28rem;
+        left: 0;
+        right: 0;
+        bottom: unset;
+        border-radius: 20px;
+        animation-name: fromTop;
+        animation-duration: 0.5s;
+        -webkit-animation-name: fromTop;
+        -webkit-animation-duration: 0.5s;
+    }
+}
+
+@keyframes fromTop {
+    0% {
+        top: -300px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes fromBottom {
+    0% {
+        bottom: -300px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.quyx-root .modal .modal-box .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.6rem;
+}
+
+.quyx-root .modal .modal-box .title button {
+    all: unset;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out all;
+    border: 1px solid transparent;
+}
+
+.quyx-root .modal .modal-box .title button.back {
+    left: 1rem;
+}
+
+.quyx-root .modal .modal-box .title button:hover {
+    background-color: #eeeeeea7;
+    border: 1px solid #eee;
+}
+
+.quyx-root .modal .modal-box.dark .title button:hover {
+    background-color: #1e2337;
+    border: 1px solid #30364b;
+}
+
+.quyx-root .modal .modal-box .title h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.quyx-root .modal .modal-box .body {
+    padding: 1rem 1.35rem;
+}
+
+.quyx-root .modal .modal-box .body .user-to-space {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.quyx-root .modal .modal-box .body .user-to-space svg {
+    stroke-width: 1px;
+    opacity: 0.6;
+}
+
+.quyx-root .modal .modal-box .body .user-to-space img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.quyx-root .modal .modal-box.dark .body .user-to-space img {
+    background-color: #30364b;
+}
+
+.quyx-root .custom-avatar {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.quyx-root .modal .modal-box .body .space-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    margin: 0% auto;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.quyx-root .modal .modal-box .body .space-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.quyx-root .modal .modal-box .body .space-info p {
+    font-size: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    opacity: 0.5;
+}
+
+.quyx-root .modal .modal-box .body .space-info p svg {
+    cursor: pointer;
+}
+
+.quyx-root .modal .modal-box .body > button.btn {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 1.4rem;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: #eeeeee43;
+    border: 1px solid #ddddddbf;
+    border-radius: 12px;
+    padding: 1.2rem 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.quyx-root .modal .modal-box.dark .body .more-space-info {
+    background-color: #151929;
+    border-color: #30364b;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info > div {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.55rem;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info > div svg {
+    stroke-width: 1.5px;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info > div > div p {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.quyx-root .modal .modal-box .body .more-space-info > div > div span {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.quyx-root .modal .modal-box .body .credits {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.quyx-root .modal .modal-box .body .credits a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.quyx-root .modal .modal-box .body .credits span {
+    opacity: 0.5;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body {
+    margin-bottom: 2rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 2.5rem 0;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .empty > svg {
+    stroke-width: 1.2px;
+    opacity: 0.5;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .empty p {
+    font-size: 0.95rem;
+    width: 90%;
+    max-width: 17rem;
+    line-height: 160%;
+    margin-bottom: 1rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials select {
+    border: 1px solid #ddd;
+    width: 100%;
+    outline: none;
+    padding: 1.2rem 1.35rem;
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #000;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 50%;
+    padding-right: 1.4rem !important;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    margin-bottom: 0.8rem;
+}
+
+.quyx-root .modal .modal-box.dark .body .credentials-body .credentials select {
+    color: #fff;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    border: 1px solid #495066;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials select:focus {
+    border: 1px solid #9327ff;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .helper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .helper > div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .helper > div button:first-child {
+    background-color: #eeeeee5f;
+    border: 1px solid #ddd;
+    color: #000;
+    padding: 0.75rem 1.4rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.quyx-root
+    .modal
+    .modal-box.dark
+    .body
+    .credentials-body
+    .credentials
+    .helper
+    > div
+    button:first-child {
+    background-color: #151929;
+    color: #fff;
+    border: 1px solid #495066;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .helper > div button:last-child {
+    border: 1px solid #9327ff;
+    background-color: transparent;
+    color: #9327ff;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quyx-root
+    .modal
+    .modal-box
+    .body
+    .credentials-body
+    .credentials
+    .helper
+    > div
+    button:last-child
+    svg {
+    stroke-width: 2px;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .preview {
+    background-color: #eeeeee5a;
+    margin-bottom: 1rem;
+    padding: 1.3rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.quyx-root .modal .modal-box.dark .body .credentials-body .credentials .preview {
+    background-color: #151929;
+    border: 1px solid #495066;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .preview .preview-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .preview .preview-title hr {
+    width: 100%;
+    max-width: 2rem;
+    border: none;
+    height: 1px;
+    background-color: #aaa;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .preview h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials > button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .header {
+    display: flex;
+    padding: 0.1rem 0.9rem;
+    justify-content: center;
+    margin-bottom: 1.45rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .header svg {
+    stroke-width: 1px;
+    opacity: 0.4;
+}
+
+.quyx-root .modal .modal-box .body .empty-p {
+    font-size: 0.88rem;
+    padding: 0.5rem 0;
+}
+
+.quyx-root .modal .modal-box .body .credentials-body .credentials .errors {
+    font-size: 0.85rem;
+    color: red;
+    padding: 0.15rem 0;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    line-height: 150%;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form {
+    margin-bottom: 2rem;
+    margin-top: -0.2rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form button.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+    gap: 0.8em;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form form .form-grp {
+    position: relative;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form form .form-grp > label {
+    position: absolute;
+    left: 1rem;
+    top: -0.5rem;
+    background-color: #fff;
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+    transition: 0.3s ease-in-out all;
+}
+
+.quyx-root .modal .modal-box.dark .body .credentials-form form .form-grp > label {
+    background-color: #0d0f18;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form form label::first-letter {
+    text-transform: uppercase;
+}
+
+.quyx-root .credentials-form form input[type='text'],
+.quyx-root .credentials-form form input[type='url'],
+.quyx-root .credentials-form form input[type='file'],
+.quyx-root .credentials-form form input[type='datetime-local'],
+.quyx-root .credentials-form form textarea,
+.quyx-root .credentials-form form select {
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: inherit;
+    color: #000;
+    outline: none;
+    padding: 1.2rem 1.25rem;
+    resize: none;
+    border-radius: 15px;
+    transition: 0.3s ease-in-out all;
+    font-size: 0.9rem;
+}
+
+.quyx-root .modal-box.dark .credentials-form form input[type='text'],
+.quyx-root .modal-box.dark .credentials-form form input[type='url'],
+.quyx-root .modal-box.dark .credentials-form form input[type='file'],
+.quyx-root .modal-box.dark .credentials-form form input[type='datetime-local'],
+.quyx-root .modal-box.dark .credentials-form form textarea,
+.quyx-root .modal-box.dark .credentials-form form select {
+    color: #fff;
+    border: 1px solid #495066;
+}
+
+.quyx-root .credentials-form form input[type='text']:focus,
+.quyx-root .credentials-form form input[type='url']:focus,
+.quyx-root .credentials-form form input[type='file']:focus,
+.quyx-root .credentials-form form input[type='datetime-local']:focus,
+.quyx-root .credentials-form form textarea:focus,
+.quyx-root .credentials-form form select:focus {
+    border: 1px solid #9327ff !important;
+}
+
+.quyx-root input:focus + label,
+.quyx-root textarea:focus + label,
+.quyx-root select:focus + label {
+    color: #9327ff !important;
+}
+
+.quyx-root .modal .modal-box .body .credentials-form form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 50%;
+    padding-right: 1.4rem !important;
+    cursor: pointer;
+}
+
+.quyx-root .modal .modal-box.dark .body .credentials-form form select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
+
+.quyx-root .credentials-form form input[type='text']::placeholder,
+.quyx-root .credentials-form form input[type='url']::placeholder,
+.quyx-root .credentials-form form textarea::placeholder {
+    opacity: 0.8;
+}
+
+.quyx-root input[type='file']::file-selector-button {
+    background-color: inherit;
+    border: none;
+    padding: 0.4rem 0rem;
+    padding-right: 1rem;
+    border-radius: 0px;
+    margin: -0.3rem 0;
+    margin-right: 1rem !important;
+    font-weight: 500;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+    opacity: 0.5;
+    color: #000;
+    font-size: 0.88rem;
+}
+
+.quyx-root input[type='file']::-webkit-file-upload-button {
+    background-color: inherit;
+    margin-right: 1rem;
+}
+
+.quyx-root .modal-box.dark input[type='file']::file-selector-button {
+    color: #fff;
+}
+
+.quyx-root .credentials-form .error {
+    color: red;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.8rem;
+    padding-top: 0.5rem;
+}

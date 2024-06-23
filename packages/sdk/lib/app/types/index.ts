@@ -14,7 +14,7 @@ export interface User extends Base {
     pfp?: string | null
 }
 
-export interface Space {
+export interface Space extends Base {
     name: string
     did: DID
     url?: string | null

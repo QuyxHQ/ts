@@ -1,15 +1,19 @@
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import typescript from '@rollup/plugin-typescript'
-import dts from 'rollup-plugin-dts'
-import terser from '@rollup/plugin-terser'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
-import json from '@rollup/plugin-json'
+'use strict';
 
-const packageJson = require('./package.json')
+Object.defineProperty(exports, '__esModule', { value: true });
 
-export default [
+var resolve = require('@rollup/plugin-node-resolve');
+var commonjs = require('@rollup/plugin-commonjs');
+var typescript = require('@rollup/plugin-typescript');
+var dts = require('rollup-plugin-dts');
+var terser = require('@rollup/plugin-terser');
+var peerDepsExternal = require('rollup-plugin-peer-deps-external');
+var postcss = require('rollup-plugin-postcss');
+var json = require('@rollup/plugin-json');
+
+const packageJson = require('./package.json');
+
+var rollup_config = [
     {
         input: 'lib/index.ts',
         output: [
@@ -38,9 +42,11 @@ export default [
         ],
     },
     {
-        input: 'dist/cjs/types/lib/index.d.ts',
+        input: 'dist/cjs/types/src/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts.default()],
         external: [/\.css$/],
     },
-]
+];
+
+exports.default = rollup_config;
